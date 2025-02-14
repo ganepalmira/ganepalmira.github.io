@@ -69,6 +69,15 @@
 					<input type="text" class="form-control" id="Dirección" name="Dirección" required>
 				</div>
 
+				<div class="col-md-6">
+					<label for="Telefono" class="form-label">Empresa</label>
+					<div class="input-group has-validation">
+						<input type="text" class="form-control" id="Empresa" name="Empresa"
+						oninput="this.value = this.value.replace(/[^.a-zñáéíóúA-ZÑÁÉÍÓÚ\s]/g, '')" required
+							aria-describedby="inputGroupPrepend">
+					</div>
+				</div>
+
 				<input type="hidden" name="_captcha" value="false">
 				<input id="FileInput" type="hidden" required>
 
