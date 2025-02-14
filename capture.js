@@ -1,3 +1,4 @@
+
 (function() {
   // The width and height of the captured photo. We will set the
   // width to the value defined here, but the height will be
@@ -10,6 +11,8 @@
   // video from the camera. Obviously, we start at false.
 
   var streaming = false;
+  window.fileBlob = null
+
 
   // The various HTML elements we need to configure or control. These
   // will be set by the startup() function.
@@ -88,10 +91,35 @@
     
       var data = canvas.toDataURL('image/png');
       photo.setAttribute('src', data);
+      photo.setAttribute('value', data);
+
+      try {
+        let base64Image = data
+        window.fileBlob = base64ToFile(base64Image, "imagen/png")  
+      } catch (error) {
+        console.log(error);
+      }
+
+      
     } else {
       clearphoto();
     }
   }
+
+  function base64ToFile(base64String, mimeType){
+    let byteCharacters = atob(base64String.split(",")[1])
+    let byteNumbers = new Array(byteCharacters.length)
+
+    for(let i = 0; i < byteCharacters.length; i++){
+      byteNumbers[i] = byteCharacters.charCodeAt(i)
+    }
+
+    let byteArray = new Uint8Array(byteNumbers)
+    return new Blob([byteArray],{ type: mimeType})
+
+  }
+
+
 
   // Set up our event listener to run the startup process
   // once loading is complete.
