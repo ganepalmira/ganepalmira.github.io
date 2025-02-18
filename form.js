@@ -36,7 +36,7 @@ document.querySelector("#form").addEventListener("submit", function (event) {
     toastCargando.show() // Mostrar el toast de cargando
 
     // Enviar el formulario usando fetch
-    fetch("https://formsubmit.co/william.brinez017@gmail.com", {
+    fetch("https://formsubmit.co/auxiliardesarrollo3@ganepalmira.com.co", {
         method: "POST",
         body: formData
     }).then(response => {
