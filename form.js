@@ -13,7 +13,7 @@ document.querySelector("#form").addEventListener("submit", function (event) {
     let nomb = document.getElementById("Nombres")
     let ape = document.getElementById("Apellidos")
     let nDocumento = document.getElementById("N.Documento")
-    let nomC = "Registro " + nomb.value + " " + ape.value
+    let nomC = "Registro comité responsabilidad social empresarial"
 
     // Crear un nuevo input oculto para el asunto del correo
     let newInput = document.createElement("input")
@@ -36,7 +36,7 @@ document.querySelector("#form").addEventListener("submit", function (event) {
     toastCargando.show() // Mostrar el toast de cargando
 
     // Enviar el formulario usando fetch
-    fetch("https://formsubmit.co/cff1c4ef8bc9e8fa1f0f112601d2797d", {
+    fetch("https://formsubmit.co/2040cd5c7d60c3e26e75f3338aecdeb3", {
         method: "POST",
         body: formData
     }).then(response => {
