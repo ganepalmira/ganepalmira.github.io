@@ -92,3 +92,8 @@
   background-color: white;
   max-height: 50px;
 }
+
+#check{
+  height: 16px;
+  width: 16px;
+}
